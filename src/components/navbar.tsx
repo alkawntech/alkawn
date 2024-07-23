@@ -94,7 +94,7 @@ export default function AlkawnNavbar() {
   ]
 
   return (
-    <div className={`${isTop && !isMenuOpen?'bg-transparent':'bg-black'} ${!isMenuOpen?'bg-opacity-60':'bg-opacity-100'} fixed text-white w-screen top-0 z-50 backdrop-blur-sm`}>
+    <div className={`${isTop && !isMenuOpen?'bg-transparent':'bg-black'} ${!isMenuOpen?'bg-opacity-60':'bg-opacity-100'} fixed text-white w-screen  top-0 z-50 backdrop-blur-sm`}>
         <nav className="flex justify-center max-sm:justify-between items-center gap-5 p-2 bg-transparent">
         <AlkawnLogo/>
         {items.map((item,index)=>(            
