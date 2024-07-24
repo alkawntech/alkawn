@@ -9,6 +9,7 @@ interface MenuItem{
     title: string
     description: string,
     href: string,
+    target?:string
 }
 
 export default function AlkawnNavbar() {
@@ -37,7 +38,8 @@ export default function AlkawnNavbar() {
     id:"nav_product",
     title: "Products",
     description:"Hardware products",
-    href:"/products"
+    href:"https://store.alkawn.tech",
+    target:"_blank"
   }
 
   const services : MenuItem={
@@ -98,12 +100,13 @@ export default function AlkawnNavbar() {
         <nav className="flex justify-center max-sm:justify-between items-center gap-5 p-2 bg-transparent">
         <AlkawnLogo/>
         {items.map((item,index)=>(            
-            <a key={index} className="text-sm hover:text-primary max-sm:hidden" href={item.href}>{item.title}</a>
+            <a key={index} className="text-sm hover:text-primary max-sm:hidden" target={item.target} href={item.href}>{item.title}</a>
         ))}
         <div className="sm:hidden">
         <Slant size={20} toggled={isMenuOpen} toggle={setIsMenuOpen}/>
         </div>
     </nav>
+
     <div
         className={`${
           isMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible'
@@ -111,7 +114,7 @@ export default function AlkawnNavbar() {
       >
     {items.map((item,index)=>(            
            <div key={index}>
-             <a  className="font-bold text-[20px] hover:text-primary" href={item.href}>{item.title}</a>
+             <a  className="font-bold text-[20px] hover:text-primary" target={item.target} href={item.href}>{item.title}</a>
            </div>
         ))}
     </div>

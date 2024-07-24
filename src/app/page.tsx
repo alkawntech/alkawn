@@ -13,7 +13,11 @@ interface CardItemProps {
   imageSrc: string;
 }
 
-const CardItem: React.FC<CardItemProps> = ({ title, description, imageSrc }) => (
+const CardItem: React.FC<CardItemProps> = ({
+  title,
+  description,
+  imageSrc,
+}) => (
   <Card className="col-span-12 sm:col-span-4 h-[300px] relative overflow-hidden">
     <CardHeader className="absolute z-10 top-1 flex-col !items-start">
       <p className="text-tiny text-white/60 uppercase font-bold">{title}</p>
@@ -42,10 +46,13 @@ const Header: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight">
-            DESIGN <br /> DEVELOPMENT <br /> MAINTENANCE
+            Alkawn Tech
+            <br />
+            Pioneering Software <br /> and Hardware Excellence
           </h1>
           <h2 className="text-white mt-4 mb-8">
-            At Alkawn Tech, we merge cutting-edge software solutions with top-tier hardware to drive the digital transformation of your business. Discover seamless integration, unparalleled performance, and technology that propels you into the future. Let's build and elevate your tech ecosystem together.
+            Innovating the future through cutting-edge software development and
+            quality hardware solutions.
           </h2>
           <div className="flex gap-3 max-md:justify-center justify-start">
             <a
@@ -95,16 +102,40 @@ const MainContent: React.FC = () => {
 
       <div className="py-10 w-full px-4 lg:px-8">
         <div className="max-w-[1000px] mx-auto gap-5 grid grid-cols-12 ">
-          <CardItem
-            title="Innovative Software"
-            description="Custom solutions to transform your business"
-            imageSrc="https://nextui.org/images/card-example-4.jpeg"
-          />
-          <CardItem
-            title="Comprehensive Services"
-            description="From development to deployment and support"
-            imageSrc="https://nextui.org/images/card-example-3.jpeg"
-          />
+          <Card className="col-span-12 sm:col-span-4 h-[300px]">
+            <CardHeader className="absolute z-10 backdrop-blur-md flex-col !items-start">
+              <p className="text-tiny text-white/60 uppercase font-bold">
+                Innovative Software
+              </p>
+              <h4 className="text-white font-medium text-large">
+                Custom solutions to transform your business
+              </h4>
+            </CardHeader>
+            <Image
+              removeWrapper
+              alt="Card background"
+              className="z-0 w-full h-full object-cover"
+              src="/images/software.jpg"
+            />
+          </Card>
+
+           <Card className="col-span-12 sm:col-span-4 h-[300px]">
+            <CardHeader className="absolute z-10 backdrop-blur-md flex-col !items-start">
+              <p className="text-tiny text-white/60 uppercase font-bold">
+                Comprehensive Services
+              </p>
+              <h4 className="text-white font-medium text-large">
+                From development to deployment and support
+              </h4>
+            </CardHeader>
+            <Image
+              removeWrapper
+              alt="Card background"
+              className="z-0 w-full h-full object-cover"
+              src="images/service.jpg"
+            />
+          </Card>
+        
           <CardItem
             title="High-Quality Hardware"
             description="Durable and efficient tech products"
@@ -112,7 +143,6 @@ const MainContent: React.FC = () => {
           />
         </div>
       </div>
-      
 
       <section className="py-20 w-full">
         <div className="text-center max-w-4xl mx-auto px-4 lg:px-6">
@@ -120,7 +150,12 @@ const MainContent: React.FC = () => {
             Who We Are
           </h2>
           <p className="text-lg text-white/80">
-            At Alkawn Tech, we are a team of dedicated professionals with a passion for innovation. Our mission is to drive technological advancement and provide top-notch solutions that meet the evolving needs of our clients. With expertise in both software development and hardware solutions, we deliver integrated systems that enhance efficiency, performance, and growth.
+            At Alkawn Tech, we are a team of dedicated professionals with a
+            passion for innovation. Our mission is to drive technological
+            advancement and provide top-notch solutions that meet the evolving
+            needs of our clients. With expertise in both software development
+            and hardware solutions, we deliver integrated systems that enhance
+            efficiency, performance, and growth.
           </p>
         </div>
       </section>
@@ -131,7 +166,12 @@ const MainContent: React.FC = () => {
             Our Solutions
           </h2>
           <p className="text-lg text-black">
-            We offer a comprehensive range of solutions designed to address the diverse needs of businesses today. From cutting-edge software applications that streamline operations to high-quality hardware that ensures reliable performance, our solutions are tailored to help you succeed. Explore how we can support your goals with our innovative products and expert services.
+            We offer a comprehensive range of solutions designed to address the
+            diverse needs of businesses today. From cutting-edge software
+            applications that streamline operations to high-quality hardware
+            that ensures reliable performance, our solutions are tailored to
+            help you succeed. Explore how we can support your goals with our
+            innovative products and expert services.
           </p>
         </div>
       </section>
