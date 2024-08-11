@@ -1,11 +1,9 @@
 "use client";
-
-import AnimatedTextMain from "@/components/animted_text_main";
 import Footer from "@/components/footer";
 import AlkawnNavbar from "@/components/navbar";
+import { Card, CardHeader, Image } from "@nextui-org/react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React from "react";
-import { Card, CardHeader, Image } from "@nextui-org/react";
 
 interface CardItemProps {
   title: string;
@@ -91,15 +89,6 @@ const MainContent: React.FC = () => {
 
   return (
     <main className="min-h-screen w-full bg-black text-white flex flex-col items-center overflow-x-hidden">
-      <div className="py-10 text-center">
-        <AnimatedTextMain baseVelocity={-1}>
-          Digitalizing the Country, Building New Technologies
-        </AnimatedTextMain>
-        <AnimatedTextMain baseVelocity={1}>
-          Innovating with AI, Pioneering Software Solutions
-        </AnimatedTextMain>
-      </div>
-
       <div className="py-10 w-full px-4 lg:px-8">
         <div className="max-w-[1000px] mx-auto gap-5 grid grid-cols-12 ">
           <Card className="col-span-12 sm:col-span-4 h-[300px]">
@@ -119,7 +108,7 @@ const MainContent: React.FC = () => {
             />
           </Card>
 
-           <Card className="col-span-12 sm:col-span-4 h-[300px]">
+          <Card className="col-span-12 sm:col-span-4 h-[300px]">
             <CardHeader className="absolute z-10 backdrop-blur-md flex-col !items-start">
               <p className="text-tiny text-white/60 uppercase font-bold">
                 Comprehensive Services
@@ -135,7 +124,7 @@ const MainContent: React.FC = () => {
               src="images/service.jpg"
             />
           </Card>
-        
+
           <CardItem
             title="High-Quality Hardware"
             description="Durable and efficient tech products"
