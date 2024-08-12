@@ -33,40 +33,40 @@ const Footer: React.FC = () => {
     },
   ];
   const socialMedias: IIconButton[] = [
-    { icon: <FaThreads />, href: "" },
-    { icon: <MdFacebook />, href: "" },
-    { icon: <FaInstagram />, href: "" },
-    { icon: <FaGithub />, href: "" },
+    { icon: <FaThreads />, href: "https://www.threads.net/@alkawnltd" },
+    { icon: <MdFacebook />, href: "https://www.facebook.com/alkawnltd/" },
+    { icon: <FaInstagram />, href: "https://www.instagram.com/alkawnltd" },
+    { icon: <FaGithub />, href: "https://github.com/alkawntech" },
   ];
   const services: ITextButton[] = [
     {
       title: "Web Development",
-      href: "/web_development",
+      href: "/services#web_app",
     },
     {
       title: "Mobile App Development",
-      href: "/mobile_app_development",
+      href: "/services#applications",
     },
     {
       title: "Custom Software Development",
-      href: "/custom_software_development",
+      href: "/services#custom_software",
     },
     {
       title: "UI/UX Design",
-      href: "/ui_ux_design",
+      href: "/services#ui_ux_design",
     },
     {
       title: "DevOps & IT Infrastructure",
-      href: "/devops_it_infrastructure",
+      href: "/services#service",
     },
 
     {
       title: "API Development & Integration",
-      href: "/api_development_integration",
+      href: "/services#api",
     },
     {
       title: "Maintenance & Support",
-      href: "/maintenance_support",
+      href: "/services#support",
     },
   ];
 
@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
 
   const socialMediaItems = (
     <center>
-      <div className="flex flex-wrap justify-between items-center text-sm text-start max-w-screen-lg">
+      <div className="flex flex-wrap justify-between items-center text-sm text-start max-w-screen-xl">
         Get connected with us on social networks
         <div className="flex gap-4">
           {socialMedias.map((item, index) => (
@@ -164,7 +164,7 @@ const Footer: React.FC = () => {
 
   const centerItems = (
     <center className="my-5">
-      <div className="flex flex-wrap justify-center gap-x-10 border-y border-gray-400 text-sm max-w-screen-lg">
+      <div className="flex flex-wrap justify-center gap-x-10 border-y border-gray-400 text-sm max-w-screen-xl">
         {/* About Us Section */}
         <div className="flex flex-col py-4 items-start">
           <h3 className="font-semibold">About Us</h3>
@@ -254,7 +254,7 @@ const Footer: React.FC = () => {
 
   const bottomItems = (
     <center>
-      <div className="flex justify-between max-md:flex-col text-[12px] max-w-screen-lg">
+      <div className="flex justify-between max-md:flex-col text-[12px] max-w-screen-xl">
         <div className="mb-2 sm:mb-0 text-start  text-gray-500">
           Copyright © 2024 Alkawn Ltd. All rights reserved.
         </div>

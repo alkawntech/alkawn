@@ -1,6 +1,7 @@
 "use client";
 import { MenuItem } from "@nextui-org/react";
 import { Slant } from "hamburger-react";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AlkawnLogo } from "./logo";
 
@@ -9,7 +10,7 @@ interface MenuItem {
   title: string;
   description: string;
   href: string;
-  target?: string;
+  openWindow?: boolean;
 }
 
 export default function AlkawnNavbar() {
@@ -36,10 +37,10 @@ export default function AlkawnNavbar() {
 
   const products: MenuItem = {
     id: "nav_product",
-    title: "Products",
+    title: "Alkawn Store",
     description: "Hardware products",
     href: "/products",
-    target: "_blank",
+    openWindow: true,
   };
 
   const services: MenuItem = {
@@ -87,6 +88,7 @@ export default function AlkawnNavbar() {
     aboutUs,
     contact,
   ];
+  const router = useRouter();
 
   return (
     <div
@@ -97,14 +99,19 @@ export default function AlkawnNavbar() {
       <nav className="flex justify-center max-sm:justify-between items-center gap-5 p-2 bg-transparent">
         <AlkawnLogo />
         {items.map((item, index) => (
-          <a
+          <button
+            onClick={() => {
+              if (item.openWindow == true) {
+                window.open(item.href);
+              } else {
+                router.push(item.href);
+              }
+            }}
             key={index}
             className="text-sm hover:text-primary max-sm:hidden"
-            target={item.target}
-            href={item.href}
           >
             {item.title}
-          </a>
+          </button>
         ))}
         <div className="sm:hidden">
           <Slant size={20} toggled={isMenuOpen} toggle={setIsMenuOpen} />
@@ -120,13 +127,20 @@ export default function AlkawnNavbar() {
       >
         {items.map((item, index) => (
           <div key={index}>
-            <a
+            <button
+              onClick={() => {
+                if (item.openWindow == true) {
+                  window.open(item.href);
+                } else {
+                  router.push(item.href);
+                }
+              }}
               className="font-bold text-[20px] hover:text-primary"
-              target={item.target}
-              href={item.href}
+              // target={item.target}
+              // href={item.href}
             >
               {item.title}
-            </a>
+            </button>
           </div>
         ))}
       </div>
